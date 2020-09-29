@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+    front:
+        image: tutum/dnsutils
+        entrypoint: ["sleep", "500s"]
+        networks:
+            - front
+            
+    middle:
+        image: tutum/dnsutils
+        entrypoint: ["sleep", "500s"]
+        networks:
+            - front
+            - back
+                
+    back:
+        image: tutum/dnsutils
+        entrypoint: ["sleep", "500s"]
+        networks:
+            - back
+        
+networks:
+    front: 
+    back: 
